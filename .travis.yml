@@ -20,5 +20,8 @@ before_install:
 script:
 - sfdx force:config:set defaultdevhubusername=andrey.willi@gmail.com --global
 - sfdx force:org:list --all
+- sfdx force:org:display -u my-hub-org
+- sfdx force:source:push -u my-hub-org
+- sfdx force:apex:test:run -u my-hub-org --wait 10
 
 
